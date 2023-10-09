@@ -19,6 +19,7 @@ const SecondPage = ({nextStep, prevStep, handleChange, submitForm, values})=>{
         <input
           type="text"
           placeholder="next"
+          defaultValue={values.input1}
           onChange={handleChange('input1')}
         />
         

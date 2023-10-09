@@ -64,7 +64,7 @@ export default class FormMain extends Component{
                     prevStep={this.prevStep}
                     handleChange={this.handleChange}
                     submitForm={this.submitForm}
-                    values={this.values}
+                    values={values}
                 />)
             default:
                 return(<h2>form submitted</h2>)
