@@ -11,10 +11,11 @@ const FirstPage = ({nextStep, handleChange, values}) =>{
         <input
           type="text"
           placeholder="Email Address"
+          defaultValue={values.input0}
           onChange={handleChange('input0')}
         />
         
-        <button type="submit" onClick={ Continue }>Submit</button>
+        <button type="submit" onClick={ Continue }>Next</button>
       </form> 
     )
 }
