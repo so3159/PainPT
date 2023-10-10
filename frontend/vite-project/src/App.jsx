@@ -3,7 +3,7 @@ import FormMain from './form-pages/FormMain.jsx';
 
 
 function App() {
-  return (
+  return ( //simply render page - this will render the form currently but any perminant features will be rendered here
     <div className="App">
       <FormMain/>
     </div>

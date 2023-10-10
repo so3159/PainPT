@@ -6,13 +6,14 @@ import ResPage from './ResPage'
 
 
 export default class FormMain extends Component{
-    state = {
+    state = { //store the state of the form - including any response from server
         step: 0,
         input0: '',
         input1: '',
         message: ''
     }
 
+    //step through form forward + backwards
     prevStep = () =>{
         const {step} = this.state;
         this.setState({step: step - 1});
@@ -24,10 +25,12 @@ export default class FormMain extends Component{
         this.setState({step: step + 1});
     }
     
+    //handle the changes
     handleChange = input => e =>{
         this.setState({[input]: e.target.value});
     }
 
+    //pass to server and get response
     submitForm = async () =>{
         const state = this.state;
         //console.log(input0);
@@ -49,6 +52,7 @@ export default class FormMain extends Component{
             });
     }
 
+    //render current state of form
     render(){
         const { step } = this.state;
         const {input0, input1} = this.state;
