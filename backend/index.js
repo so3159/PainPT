@@ -36,4 +36,6 @@ app.post("/", async(request, response) =>{
     // }catch(exception){
     //     response.json({output:exception});
     // }
+
+    response.json({ hello: "hello from server"})
 })

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { useState } from 'react';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
+import ResPage from './ResPage'
 
 
 export default class FormMain extends Component{
@@ -8,6 +10,7 @@ export default class FormMain extends Component{
         step: 0,
         input0: '',
         input1: '',
+        message: ''
     }
 
     prevStep = () =>{
@@ -25,7 +28,7 @@ export default class FormMain extends Component{
         this.setState({[input]: e.target.value});
     }
 
-    submitForm = () =>{
+    submitForm = async () =>{
         const state = this.state;
         //console.log(input0);
         fetch("http://localhost:8000/", {
@@ -37,10 +40,13 @@ export default class FormMain extends Component{
               state
             }),
           })
-            // .then((response) => response.json()) //this part is for response from api
-            // .catch((error) => {
-            //   console.log(error);
-            // });
+            .then((response) => response.json()) //this part is for response from api
+            .then((data) =>{
+                this.setState({message: data.hello})
+            })
+            .catch((error) => {
+              console.log(error);
+            });
     }
 
     render(){
@@ -67,7 +73,10 @@ export default class FormMain extends Component{
                     values={values}
                 />)
             default:
-                return(<h2>form submitted</h2>)
+                return(<ResPage 
+                    response={ this.state.message } 
+                    prevStep={this.prevStep}                    
+                />)
         }
 
     }
