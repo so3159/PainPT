@@ -10,6 +10,7 @@ export default class FormMain extends Component{
         step: 0,
         input0: '',
         input1: '',
+        radio: "0",
         message: ''
     }
 
@@ -56,7 +57,7 @@ export default class FormMain extends Component{
     render(){
         const { step } = this.state;
         const {input0, input1} = this.state;
-        const values = {input0, input1}
+        const values = this.state
 
         switch(step){
             case 0:
