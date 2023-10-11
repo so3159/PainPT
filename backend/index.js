@@ -21,19 +21,21 @@ const openai = new OpenAI({
 });
 
 app.post("/", async(request, response) =>{
-    const {chats} = request.body;
-    console.log(chats);
+    //const {chats} = request.body;
+    console.log(request.body);
 
-    try{
-        const result = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
-            messages: [{"role": "system", "content": "you are a chatbot"}, ...chats,],
-        })
+    // try{
+    //     const result = await openai.chat.completions.create({
+    //         model: "gpt-3.5-turbo",
+    //         messages: [{"role": "system", "content": "you are a chatbot"}, ...chats,],
+    //     })
 
-        response.json({
-            output: result.choices[0].message,
-        })
-    }catch(exception){
-        response.json({output:exception});
-    }
+    //     response.json({
+    //         output: result.choices[0].message,
+    //     })
+    // }catch(exception){
+    //     response.json({output:exception});
+    // }
+
+    response.json({ hello: "hello from server"})
 })
