@@ -11,7 +11,8 @@ export default class FormMain extends Component{
         input0: '',
         input1: '',
         radio: "0",
-        message: ''
+        radio1: "0",
+        message: '',
     }
 
     //step through form forward + backwards
@@ -56,7 +57,6 @@ export default class FormMain extends Component{
     //render current state of form
     render(){
         const { step } = this.state;
-        const {input0, input1} = this.state;
         const values = this.state
 
         switch(step){

@@ -6,8 +6,6 @@ const ResPage = ({response, prevStep}) =>{
         prevStep();
     }
 
-    console.log(response)
-
     return(
         <>
         <p> {response} </p>

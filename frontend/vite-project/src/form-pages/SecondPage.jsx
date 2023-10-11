@@ -4,7 +4,6 @@ const SecondPage = ({nextStep, prevStep, handleChange, submitForm, values})=>{
 
     const Continue = e =>{
         e.preventDefault();
-        console.log("submit");
         submitForm();
         nextStep();
     }
