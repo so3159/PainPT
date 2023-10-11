@@ -4,7 +4,6 @@ import { RadioGroup, FormControlLabel, Radio } from '@mui/material'
 const FirstPage = ({nextStep, handleChange, values}) =>{
     const Continue = e =>{
         e.preventDefault();
-        console.log(values.radio);
         nextStep();
     }
 
