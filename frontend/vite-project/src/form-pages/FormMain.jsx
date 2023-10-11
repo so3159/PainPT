@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { useState } from 'react';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
-import ResPage from './ResPage'
+import ResPage from './ResPage';
+import PainScaleActive from './PainScaleActive';
 
 
 export default class FormMain extends Component{
@@ -70,13 +71,23 @@ export default class FormMain extends Component{
                 )
             case 1:
                 return(
-                <SecondPage 
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange={this.handleChange}
-                    submitForm={this.submitForm}
-                    values={values}
-                />)
+                    <SecondPage 
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        handleChange={this.handleChange}
+                        submitForm={this.submitForm}
+                        values={values}
+                    />)
+            case 2:
+                return(
+                    <PainScaleActive
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        handleChange={this.handleChange}
+                        submitForm={this.submitForm}
+                        values={values}
+                    />
+                )
             default:
                 return(<ResPage 
                     response={ this.state.message } 
