@@ -1,4 +1,4 @@
-import OpenAI  from "openai";
+
 import express from "express"
 import bodyParser from "body-parser"
 import dotenv from "dotenv";
@@ -16,9 +16,9 @@ app.listen(port, () => {
     console.log(`listening on port ${port}`);
 });
 
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY 
-});
+// const openai = new OpenAI({
+//     apiKey: process.env.OPENAI_API_KEY
+// });
 
 app.post("/", async(request, response) =>{
     //const {chats} = request.body;
