@@ -6,6 +6,7 @@ import ResPage from './ResPage';
 import PainScaleActive from './PainScaleActive';
 
 
+
 export default class FormMain extends Component{
     state = { //store the state of the form - including any response from server
         step: 0,
@@ -88,6 +89,8 @@ export default class FormMain extends Component{
                         values={values}
                     />
                 )
+
+
             default:
                 return(<ResPage 
                     response={ this.state.message } 
