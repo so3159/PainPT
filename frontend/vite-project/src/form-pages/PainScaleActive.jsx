@@ -1,10 +1,12 @@
 import React from 'react'
-import { RadioGroup, FormControlLabel, Radio } from '@mui/material'
+import { Box, InputLabel, MenuItem, FormControl, Select, RadioGroup, FormControlLabel, Radio } from '@mui/material'
 
 const PainScaleActive = ({nextStep, prevStep, handleChange, values}) =>{
     const Continue = e =>{
         e.preventDefault();
-        console.log(values.radio);
+        console.log(values.pain_type);
+        console.log(values.radio_pain_scale_active);
+        console.log(values.radio_pain_scale_rest);
         nextStep();
     }
 
@@ -15,8 +17,27 @@ const PainScaleActive = ({nextStep, prevStep, handleChange, values}) =>{
 
     return (
         <form action="">
-            <h4>Rate your pain level when Active</h4>
-            <RadioGroup row onChange={handleChange('radio')} value={values.radio}>
+            <h4>What type of pain are you experiencing?</h4>
+            <Box sx={{ minWidth: 500 }}>
+                <FormControl variant="filled" halfWidth>
+                <InputLabel id="demo-simple-select-label">Select a pain type</InputLabel>
+                <Select
+                    value={values.pain_type}
+                    label="pain_type_desc"
+                    onChange={handleChange('pain_type')}
+                >
+                    <MenuItem value="sharp">Sharp</MenuItem>
+                    <MenuItem value="dull">Dull</MenuItem>
+                    <MenuItem value="aching">Aching</MenuItem>
+                    <MenuItem value="burning">Burning</MenuItem>
+                    <MenuItem value="throbbing">Throbbing</MenuItem>
+
+                </Select>
+                </FormControl>
+            </Box>
+                
+            <h4>Rate your pain level when active</h4>
+            <RadioGroup row onChange={handleChange('radio_pain_scale_active')} value={values.radio_pain_scale_active}>
                 <p>(Least)</p>
                 <FormControlLabel labelPlacement='top' value="1" control={<Radio />} label="1" /> 
                 <FormControlLabel labelPlacement='top' value="2" control={<Radio />} label="2" /> 
@@ -30,8 +51,8 @@ const PainScaleActive = ({nextStep, prevStep, handleChange, values}) =>{
                 <FormControlLabel labelPlacement='top' value="10" control={<Radio />} label="10" />
                 <p>(Most)</p>
                 </RadioGroup>
-            <h4>Rate your Pain Level when Resting</h4>
-                <RadioGroup row onChange={handleChange('radio1')} value={values.radio1}>
+            <h4>Rate your pain level when resting</h4>
+                <RadioGroup row onChange={handleChange('radio_pain_scale_rest')} value={values.radio_pain_scale_rest}>
                 <p>(Least)</p>
                 <FormControlLabel labelPlacement='top' value="1" control={<Radio />} label="1" /> 
                 <FormControlLabel labelPlacement='top' value="2" control={<Radio />} label="2" /> 
@@ -46,7 +67,7 @@ const PainScaleActive = ({nextStep, prevStep, handleChange, values}) =>{
                 <p>(Most)</p>
             </RadioGroup>
   
-        <button type="submit" onClick={ Continue }>Next</button>
+        <button type="submit" onClick={ Continue }>Continue</button>
         <button type="submit" onClick={ goBack }>Back</button>
       </form> 
     )
