@@ -19,14 +19,14 @@ const SymptomsPage = ({nextStep, prevStep, handleChange, values}) =>{
         <form action="">
             <Box sx={{ width: 400}}>
                  <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
-                        <Button sx={{flexGrow: 1}} onClick={handleChange={'symptoms_1'}} value="Redness">Redness</Button>
-                        <Button sx={{flexGrow: 1}} value="Swelling">Swelling</Button>
-                        <Button sx={{flexGrow: 1}} value="Numbness">Numbness</Button>
-                        <Button sx={{flexGrow: 1}} value="Bruising">Bruising</Button>
-                        <Button sx={{flexGrow: 1}} value="Tingling">Tingling</Button>
-                        <Button sx={{flexGrow: 1}} value="Muscle Fatigue">Muscle Fatigue</Button>
-                        <Button sx={{flexGrow: 1}} value="Stiffness">Stiffness</Button>
-                        <Button sx={{flexGrow: 1}} value="Joint locking">Joint locking</Button>
+                        <Button sx={{flexGrow: 1}} onClick = {handleChange('symptoms_1')} value="Redness">Redness</Button>
+                        <Button sx={{flexGrow: 1}} onClick = {handleChange('symptoms_2')} value="Swelling">Swelling</Button>
+                        <Button sx={{flexGrow: 1}} onClick = {handleChange('symptoms_3')} value="Numbness">Numbness</Button>
+                        <Button sx={{flexGrow: 1}} onClick = {handleChange('symptoms_4')} value="Bruising">Bruising</Button>
+                        <Button sx={{flexGrow: 1}} onClick = {handleChange('symptoms_5')} value="Tingling">Tingling</Button>
+                        <Button sx={{flexGrow: 1}} onClick = {handleChange('symptoms_6')} value="Muscle Fatigue">Muscle Fatigue</Button>
+                        <Button sx={{flexGrow: 1}} onClick = {handleChange('symptoms_7')} value="Stiffness">Stiffness</Button>
+                        <Button sx={{flexGrow: 1}} onClick = {handleChange('symptoms_8')} value="Joint locking">Joint locking</Button>
                 </Stack>
             </Box>
             <h3></h3>
