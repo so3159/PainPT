@@ -4,7 +4,14 @@ import {Paper, Stack, Box, ToggleButtonGroup, ToggleButton, Button} from '@mui/m
 const SymptomsPage = ({nextStep, prevStep, handleChange, values}) =>{
     const Continue = e =>{
         e.preventDefault();
-        console.log(values.symptoms);
+        console.log(values.symptoms_1);
+        console.log(values.symptoms_2);
+        console.log(values.symptoms_3);
+        console.log(values.symptoms_4);
+        console.log(values.symptoms_5);
+        console.log(values.symptoms_6);
+        console.log(values.symptoms_7);
+        console.log(values.symptoms_8);
         nextStep();
     }
 
