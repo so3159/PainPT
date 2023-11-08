@@ -22,7 +22,7 @@ const SecondPage = ({nextStep, prevStep, handleChange, submitForm, values})=>{
           onChange={handleChange('input1')}
         />
         
-        <button type="submit" onClick={ Continue }>Submit</button>
+        <button type="submit" onClick={ Continue }>Continue</button>
         <button type="submit" onClick={ goBack }>Back</button>
       </form>
     )

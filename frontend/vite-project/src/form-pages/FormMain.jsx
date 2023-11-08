@@ -4,6 +4,8 @@ import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 import ResPage from './ResPage';
 import PainScaleActive from './PainScaleActive';
+import PainProgression from './PainProgression';
+import SymptomsPage from './Symptoms';
 
 
 export default class FormMain extends Component{
@@ -11,9 +13,21 @@ export default class FormMain extends Component{
         step: 0,
         input0: '',
         input1: '',
-        radio: "0",
-        radio1: "0",
+        radio_pain_scale_active: "0",
+        radio_pain_scale_rest: "0",
+        pain_progression:'',
+        pain_start_date:'',
         message: '',
+        pain_type: '',
+        pain_experience: '',
+        symptoms_1: '',
+        symptoms_2: '',
+        symptoms_3: '',
+        symptoms_4: '',
+        symptoms_5: '',
+        symptoms_6: '',
+        symptoms_7: '',
+        symptoms_8: ''
     }
 
     //step through form forward + backwards
@@ -88,6 +102,28 @@ export default class FormMain extends Component{
                         values={values}
                     />
                 )
+            case 3:
+                return(
+                    <PainProgression
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        handleChange={this.handleChange}
+                        submitForm={this.submitForm}
+                        values={values}
+                    />
+                )
+
+            case 4:
+                return(
+                    <SymptomsPage
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        handleChange={this.handleChange}
+                        submitForm={this.submitForm}
+                        values={values}
+                    />
+                )
+
             default:
                 return(<ResPage 
                     response={ this.state.message } 
