@@ -1,6 +1,6 @@
 import React from "react";
 
-const SecondPage = ({nextStep, prevStep, handleChange, submitForm, values})=>{
+const VerifyPage = ({nextStep, prevStep, handleChange, submitForm, values})=>{
 
     const Continue = e =>{
         e.preventDefault();
@@ -15,17 +15,11 @@ const SecondPage = ({nextStep, prevStep, handleChange, submitForm, values})=>{
 
     return(
         <form action="">
-        <input
-          type="text"
-          placeholder="next"
-          defaultValue={values.input1}
-          onChange={handleChange('input1')}
-        />
-        
+          <h1>ready to submit?</h1>        
         <button type="submit" onClick={ Continue }>Continue</button>
         <button type="submit" onClick={ goBack }>Back</button>
       </form>
     )
 }
 
-export default SecondPage
+export default VerifyPage
