@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { useState } from 'react';
 import FirstPage from './FirstPage';
-import SecondPage from './SecondPage';
+import VerifyPage from './VerifyPage';
 import ResPage from './ResPage';
 import PainScaleActive from './PainScaleActive';
 import PainProgression from './PainProgression';
@@ -115,9 +115,9 @@ export default class FormMain extends Component{
                     />
                 )
 
-            case 4:
+            case 4: //keep this page last
                 return(
-                    <SecondPage 
+                    <VerifyPage 
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
                         handleChange={this.handleChange}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const SecondPage = ({nextStep, prevStep, handleChange, submitForm, values})=>{
+const VerifyPage = ({nextStep, prevStep, handleChange, submitForm, values})=>{
 
     const Continue = e =>{
         e.preventDefault();
@@ -22,4 +22,4 @@ const SecondPage = ({nextStep, prevStep, handleChange, submitForm, values})=>{
     )
 }
 
-export default SecondPage
+export default VerifyPage
