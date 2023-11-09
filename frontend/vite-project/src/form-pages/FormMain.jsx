@@ -12,12 +12,10 @@ export default class FormMain extends Component{
     state = { //store the state of the form - including any response from server
         step: 0,
         input0: '',
-        input1: '',
         radio_pain_scale_active: "0",
         radio_pain_scale_rest: "0",
         pain_progression:'',
         pain_start_date:'',
-        message: '',
         pain_type: '',
         pain_experience: '',
         symptoms_1: '',
@@ -27,7 +25,8 @@ export default class FormMain extends Component{
         symptoms_5: '',
         symptoms_6: '',
         symptoms_7: '',
-        symptoms_8: ''
+        symptoms_8: '',
+        message: '', //keep message at bottom
     }
 
     //step through form forward + backwards
@@ -38,7 +37,7 @@ export default class FormMain extends Component{
 
     nextStep = () =>{
         const {step, input0} = this.state;
-        console.log(this.state);
+        //console.log(this.state);
         this.setState({step: step + 1});
     }
     
@@ -50,6 +49,7 @@ export default class FormMain extends Component{
     //pass to server and get response
     submitForm = async () =>{
         const state = this.state;
+        console.log(state);
         //console.log(input0);
         fetch("http://localhost:8000/", {
             method: "POST",
@@ -85,15 +85,6 @@ export default class FormMain extends Component{
                 )
             case 1:
                 return(
-                    <SecondPage 
-                        nextStep={this.nextStep}
-                        prevStep={this.prevStep}
-                        handleChange={this.handleChange}
-                        submitForm={this.submitForm}
-                        values={values}
-                    />)
-            case 2:
-                return(
                     <PainScaleActive
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
@@ -102,7 +93,7 @@ export default class FormMain extends Component{
                         values={values}
                     />
                 )
-            case 3:
+            case 2:
                 return(
                     <PainProgression
                         nextStep={this.nextStep}
@@ -113,7 +104,7 @@ export default class FormMain extends Component{
                     />
                 )
 
-            case 4:
+            case 3:
                 return(
                     <SymptomsPage
                         nextStep={this.nextStep}
@@ -123,6 +114,16 @@ export default class FormMain extends Component{
                         values={values}
                     />
                 )
+
+            case 4:
+                return(
+                    <SecondPage 
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        handleChange={this.handleChange}
+                        submitForm={this.submitForm}
+                        values={values}
+                    />)
 
             default:
                 return(<ResPage 
