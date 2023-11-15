@@ -6,6 +6,7 @@ import ResPage from './ResPage';
 import PainScaleActive from './PainScaleActive';
 import PainProgression from './PainProgression';
 import SymptomsPage from './Symptoms';
+import FinalQuestion from './FinalQuestion';
 
 
 export default class FormMain extends Component{
@@ -26,6 +27,7 @@ export default class FormMain extends Component{
         symptoms_6: '',
         symptoms_7: '',
         symptoms_8: '',
+        finalthoughts: '',
         message: '', //keep message at bottom
     }
 
@@ -114,8 +116,17 @@ export default class FormMain extends Component{
                         values={values}
                     />
                 )
-
-            case 4: //keep this page last
+            case 4:
+                return(
+                    <FinalQuestion 
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        handleChange={this.handleChange}
+                        submitForm={this.submitForm}
+                        values={values}
+                    />
+                )
+            case 5: //keep this page last
                 return(
                     <VerifyPage 
                         nextStep={this.nextStep}
@@ -133,4 +144,4 @@ export default class FormMain extends Component{
         }
 
     }
-}
+}        
